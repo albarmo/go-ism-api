@@ -1,8 +1,8 @@
 package fileHandlers
 
 import (
-	"go-crud/models"
-	"go-crud/utils"
+	"ism/models"
+	"ism/utils"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -25,10 +25,10 @@ func (h *handler) GetAllFilesHandler(context *gin.Context) {
 
 	switch statusCode {
 	case http.StatusOK:
-		
+
 		//  populate the url field
 		for index := range fileResponse {
-			file :=&fileResponse[index]
+			file := &fileResponse[index]
 			fileUrl := utils.GetFileUrl(file.AccessKey)
 			file.Url = fileUrl
 		}

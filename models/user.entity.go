@@ -2,7 +2,7 @@ package models
 
 import (
 	"github.com/jinzhu/gorm"
-	"go-crud/utils"
+	"ism/utils"
 	"time"
 )
 

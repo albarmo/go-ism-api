@@ -3,7 +3,7 @@ package middlewares
 import (
 	"net/http"
 
-	"go-crud/utils"
+	"ism/utils"
 
 	"github.com/gin-gonic/gin"
 )

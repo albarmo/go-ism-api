@@ -1,8 +1,8 @@
 package filecontrollers
 
 import (
-	"go-crud/models"
-	"go-crud/utils"
+	"ism/models"
+	"ism/utils"
 	"net/http"
 
 	"github.com/jinzhu/gorm"
@@ -75,7 +75,7 @@ func (repo *repository) DeleteFile(fileID uint) int {
 		}
 		//  delete file from the DB
 		db.Delete(&files)
-		
+
 		return http.StatusOK
 	}
 

@@ -4,9 +4,9 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
 
-	"go-crud/controllers/file-controllers"
-	"go-crud/handlers/file-handlers"
-	"go-crud/middlewares"
+	"ism/controllers/file-controllers"
+	"ism/handlers/file-handlers"
+	"ism/middlewares"
 )
 
 func InitFileRoutes(db *gorm.DB, route *gin.RouterGroup) {

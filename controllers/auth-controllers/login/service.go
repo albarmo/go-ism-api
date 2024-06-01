@@ -1,7 +1,7 @@
 package loginAuth
 
 import (
-	"go-crud/models"
+	"ism/models"
 )
 
 // The `Service` interface defines a contract for the service
@@ -25,9 +25,9 @@ func NewServiceLogin(repository Repository) *service {
 // The LoginService method of the service struct implements the LoginService method
 // from the Service interface.
 func (s *service) LoginService(input *LoginInput) (*models.UserEntity, int) {
-	userEntity:= models.UserEntity{
-		Email: input.Email,
+	userEntity := models.UserEntity{
+		Email:    input.Email,
 		Password: input.Password,
 	}
-	return s.repository.LoginRepository(&userEntity);
+	return s.repository.LoginRepository(&userEntity)
 }

@@ -1,20 +1,21 @@
 package configs
 
 import (
-	"go-crud/models"
-	"go-crud/utils"
+	"ism/models"
+	"ism/utils"
 
 	"github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 	"github.com/sirupsen/logrus"
 )
+
 type DBConnection interface {
 	Connection() *gorm.DB
 }
 
 type service struct{}
 
-func NewDBService() *service{
+func NewDBService() *service {
 	return &service{}
 }
 
@@ -46,7 +47,6 @@ func databaseMigrations(db *gorm.DB) {
 	logrus.Info("Database migrations")
 
 }
-
 
 // Proxy function that can be replaced for testing
 var Connection = func() *gorm.DB {

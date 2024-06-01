@@ -1,10 +1,10 @@
 package routes
 
 import (
-	"go-crud/controllers/auth-controllers/login"
-	"go-crud/controllers/auth-controllers/register"
-	"go-crud/handlers/auth-handlers/login"
-	registerHandler "go-crud/handlers/auth-handlers/register"
+	"ism/controllers/auth-controllers/login"
+	"ism/controllers/auth-controllers/register"
+	"ism/handlers/auth-handlers/login"
+	registerHandler "ism/handlers/auth-handlers/register"
 
 	"github.com/gin-gonic/gin"
 	"github.com/jinzhu/gorm"
@@ -18,7 +18,6 @@ func InitAuthRoutes(db *gorm.DB, route *gin.RouterGroup) {
 	registerRepository := register.NewRegisterRepository(db)
 	registerService := register.NewRegisterService(registerRepository)
 	registerHandlers := registerHandler.NewHandlerRegister(registerService)
-
 
 	route.POST("/login", loginHandler.LoginHandler)
 

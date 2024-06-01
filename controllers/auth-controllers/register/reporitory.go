@@ -1,7 +1,7 @@
 package register
 
 import (
-	"go-crud/models"
+	"ism/models"
 	"net/http"
 
 	"github.com/jinzhu/gorm"
@@ -36,7 +36,7 @@ func (r *repository) RegisterRepository(input *models.UserEntity) (*models.UserE
 
 	db.NewRecord(input)
 	createUser := db.Create(&input)
-	
+
 	if createUser.Error != nil {
 		return nil, http.StatusExpectationFailed
 	}

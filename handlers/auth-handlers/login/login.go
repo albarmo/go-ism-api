@@ -1,9 +1,9 @@
 package loginHandler
 
 import (
-	"go-crud/controllers/auth-controllers/login"
-	"go-crud/controllers/auth-controllers/register"
-	"go-crud/utils"
+	"ism/controllers/auth-controllers/login"
+	"ism/controllers/auth-controllers/register"
+	"ism/utils"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -63,7 +63,7 @@ func (h *handler) LoginHandler(ctx *gin.Context) {
 	case http.StatusAccepted:
 		accessTokenData := map[string]interface{}{"id": resultLogin.ID, "email": resultLogin.Email}
 		accessToken, errToken := utils.Sign(accessTokenData, "JWT_SECRET", 24*60*1)
-		
+
 		var data register.RegisterResponse
 
 		utils.ObjectToJson(resultLogin, &data)

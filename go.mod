@@ -1,4 +1,4 @@
-module go-crud
+module ism
 
 go 1.20
 

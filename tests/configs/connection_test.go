@@ -3,8 +3,8 @@ package configs_test
 import (
 	"errors"
 	"fmt"
-	"go-crud/configs"
-	"go-crud/tests/mocks"
+	"ism/configs"
+	"ism/tests/mocks"
 	"testing"
 
 	"github.com/jinzhu/gorm"

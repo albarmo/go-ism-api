@@ -1,9 +1,9 @@
 package main
 
 import (
-	"go-crud/configs"
-	"go-crud/routes"
-	"go-crud/utils"
+	"ism/configs"
+	"ism/routes"
+	"ism/utils"
 	"log"
 
 	"github.com/gin-gonic/gin"

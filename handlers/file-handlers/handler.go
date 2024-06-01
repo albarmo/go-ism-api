@@ -1,7 +1,7 @@
 package fileHandlers
 
 import (
-	"go-crud/controllers/file-controllers"
+	"ism/controllers/file-controllers"
 )
 
 type handler struct {

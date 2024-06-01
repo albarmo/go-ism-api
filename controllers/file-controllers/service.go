@@ -1,11 +1,11 @@
 package filecontrollers
 
-import "go-crud/models"
+import "ism/models"
 
 type Service interface {
 	CreateFile(input *FileInput) (*models.FileModel, int)
 
-	GetAllFiles(userId uint ) ([]models.FileModel, int)
+	GetAllFiles(userId uint) ([]models.FileModel, int)
 
 	DeleteFile(fileID uint) int
 }
@@ -24,7 +24,7 @@ func (s *service) CreateFile(input *FileInput) (*models.FileModel, int) {
 		Name:      input.Name,
 		Url:       input.Url,
 		AccessKey: input.ID,
-		UserID:      input.UserId,
+		UserID:    input.UserId,
 	}
 	return s.repository.CreateFile(&fileModel)
 }

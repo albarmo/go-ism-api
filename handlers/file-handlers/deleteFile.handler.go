@@ -1,7 +1,7 @@
 package fileHandlers
 
 import (
-	"go-crud/utils"
+	"ism/utils"
 	"net/http"
 	"strconv"
 
@@ -22,7 +22,7 @@ func (h *handler) DeleteHandler(context *gin.Context) {
 
 	switch statusCode {
 	case http.StatusOK:
-		
+
 		utils.APIResponse(context, "Deleted file", http.StatusOK, http.MethodDelete, nil)
 		return
 

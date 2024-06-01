@@ -1,8 +1,8 @@
 package register
 
 import (
-	"go-crud/controllers/auth-controllers/register"
-	"go-crud/utils"
+	"ism/controllers/auth-controllers/register"
+	"ism/utils"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

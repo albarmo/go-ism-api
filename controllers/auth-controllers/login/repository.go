@@ -1,8 +1,8 @@
 package loginAuth
 
 import (
-	"go-crud/models"
-	"go-crud/utils"
+	"ism/models"
+	"ism/utils"
 	"net/http"
 
 	"github.com/jinzhu/gorm"
@@ -33,15 +33,15 @@ func (r *repository) LoginRepository(input *models.UserEntity) (*models.UserEnti
 	db := r.db.Model(&users)
 	checkAccount := db.Select("*").Where("email=?", input.Email).Find(&users)
 
-	if checkAccount.RowsAffected==0{
+	if checkAccount.RowsAffected == 0 {
 		return nil, http.StatusNotFound
 	}
 	// check if the password matches
 	comparePassword := utils.ComparePassword(users.Password, input.Password)
-	
-	if comparePassword !=nil{
+
+	if comparePassword != nil {
 		return nil, http.StatusUnauthorized
 	}
 
-	return &users,http.StatusAccepted
+	return &users, http.StatusAccepted
 }

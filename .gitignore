@@ -2,4 +2,4 @@
 tmp/
 *.sum
 .env
-go-crud
+ism

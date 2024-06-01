@@ -1,7 +1,7 @@
 package register
 
 import (
-	"go-crud/models"
+	"ism/models"
 )
 
 type Service interface {

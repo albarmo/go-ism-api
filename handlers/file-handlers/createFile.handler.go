@@ -1,9 +1,9 @@
 package fileHandlers
 
 import (
-	filecontrollers "go-crud/controllers/file-controllers"
-	"go-crud/models"
-	"go-crud/utils"
+	filecontrollers "ism/controllers/file-controllers"
+	"ism/models"
+	"ism/utils"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -38,7 +38,7 @@ func (h *handler) CreateHandler(context *gin.Context) {
 
 	fileResponse, statusCode := h.service.CreateFile(&fileInput)
 
-	if statusCode!= http.StatusCreated{
+	if statusCode != http.StatusCreated {
 		//  delete the file in cloudinary if it is not created in the DB
 		utils.DeleteFile(result.PublicID)
 	}
